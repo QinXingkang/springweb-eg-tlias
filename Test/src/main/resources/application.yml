@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: Test
+  #数据库连接信息
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db01?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 1234
+  #文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+#mybatis配置
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+#阿里云OSS
+aliyun:
+  oss:
+    endpoint: https://oss-cn-hangzhou.aliyuncs.com
+    accessKeyId: LTAI5t9u7eBhUCgkMKMqMciP
+    accessKeySecret: ek0Tt6EMWcyIhEAin7AHXcNckV3d7j
+    bucketName: web-mytlias-qxk
+
+#spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
